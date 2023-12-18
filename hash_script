@@ -1,0 +1,8 @@
+#!/bin/bash
+read -r number
+if [[ $number =~ ^[0-9]{4}$ ]] #checks if it's a 4 digit number
+then
+	echo -n "$number" | sha256sum | tr -d '-' #removing a slash that appears because of the endline
+else
+	echo "Not a 4 digit number"
+fi
